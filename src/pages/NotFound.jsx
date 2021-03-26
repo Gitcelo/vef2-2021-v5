@@ -1,4 +1,9 @@
+import React from 'react';
 
 export function NotFound() {
-  // TODO útfæra 404 síðu
+  return (
+    <div>
+      <h1>404 síða ekki til</h1>
+    </div>
+  );
 }
