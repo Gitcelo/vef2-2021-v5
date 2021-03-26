@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import s from './News.module.scss';
-//import PropTypes from 'prop-types';
 
 const apiUrl = process.env.REACT_APP_API_URL;
-
-/*News.propTypes = {
-  id: Proptypes.string.isRequired,
-}*/
 
 export function News({ id, limit = 10, link=true }) {
   const [loading, setLoading] = useState(false);
@@ -16,7 +11,7 @@ export function News({ id, limit = 10, link=true }) {
 
   useEffect(() => {
     async function fetchData() {
-      const url = `${apiUrl}${id}`;
+      const url = `${apiUrl}/${id}`;
       setLoading(true);
       setError(null);
       let json;

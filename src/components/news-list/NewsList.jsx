@@ -5,7 +5,6 @@ import s from './NewsList.module.scss';
 const apiUrl = process.env.REACT_APP_API_URL;
 
 export function NewsList() {
-  // TODO sækja yfirlit fréttaflokka
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
