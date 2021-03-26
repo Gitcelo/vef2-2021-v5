@@ -1,0 +1,9 @@
+.layout {
+    $max-width: 1600px;
+
+    &__grid {
+        margin: 0 auto;
+        max-width: $max-width;
+        overflow: hidden;
+    }
+}

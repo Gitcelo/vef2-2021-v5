@@ -16,7 +16,7 @@ export function News({ id, limit = 10, link=true }) {
 
   useEffect(() => {
     async function fetchData() {
-      const url = `${apiUrl}` + `${id}`;
+      const url = `${apiUrl}${id}`;
       setLoading(true);
       setError(null);
       let json;
@@ -48,8 +48,8 @@ export function News({ id, limit = 10, link=true }) {
   }
   const title = (data && data.title) || '';
   const news = (data && data.items) || [];
-  return (
-    <div className={s.news__box}>
+  return ( 
+    <div className={s.news__flex}>
       <h2>{title}</h2>
       <ul className={s.news__ul}>
         {news.length > 0 && news.map((n, i) => {
@@ -60,9 +60,12 @@ export function News({ id, limit = 10, link=true }) {
               </li>
             );
           }
+          return (
+            false
+          );
         })}
         </ul>
-        {(link&&<Link to="/">Til baka</Link>)||<Link to={id}><strong>Allar Fréttir</strong></Link>}
+        {(link&&<Link to="/">Til baka</Link>)||<Link to={id} className={s.news_link}><strong>Allar Fréttir</strong></Link>}
     </div>
   );
 }

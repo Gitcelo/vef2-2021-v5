@@ -1,8 +1,8 @@
-//import s from './Layout.module.scss';
+import s from './Layout.module.scss';
 
 export function Layout({ children }) {
   return (
-    <div>
+    <div className={s.layout__grid}>
       <header>
         <h1>Rúv fréttir</h1>
       </header>

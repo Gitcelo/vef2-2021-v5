@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { News } from '../news/News';
 import s from './NewsList.module.scss';
 
@@ -47,13 +46,15 @@ export function NewsList() {
     <section className={s.newsList__section}>
       {news.length > 0 && news.map((n, i) => {
         return (
+          <div key={i} className={[s.newsList__box,s.newsList__col, s.newsList__col_b, s.newsList__col_m, s.newsList__col_sm].join(" ")}>
           <News
-            key={i}
             id={n.id}
             limit={5}
             link={false}
           />
+          </div>
         )
+
       })
       }
     </section>
