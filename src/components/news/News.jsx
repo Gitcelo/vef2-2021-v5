@@ -44,7 +44,7 @@ export function News({ id, limit = 10, link=true }) {
   const title = (data && data.title) || '';
   const news = (data && data.items) || [];
   return ( 
-    <div className={s.news__flex}>
+    <div className={[s.news__flex, (link&&s.news__box)].join(" ")}>
       <h2>{title}</h2>
       <ul className={s.news__ul}>
         {news.length > 0 && news.map((n, i) => {
