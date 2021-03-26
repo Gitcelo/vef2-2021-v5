@@ -8,6 +8,7 @@ export function NewsList() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
+  console.log(apiUrl);
 
   useEffect(() => {
     async function fetchData() {
